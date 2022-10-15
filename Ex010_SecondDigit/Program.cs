@@ -1,7 +1,7 @@
-﻿Console.WriteLine("Введите целое трехзначное число:"); //Ввод данных
+﻿Console.WriteLine("Введите целое трехзначное число (цифрами):"); //Ввод данных
 string value = Console.ReadLine();
 
-bool check = int.TryParse(value, out int number); //Проверка, что введено целочисленное значение
+bool check = int.TryParse(value, out int number); //Проверка, что введено целочисленное цифровое значение
 if (check)
 {
     number = int.Parse(value); //Парсинг в целочисленный формат
@@ -19,5 +19,5 @@ if (check)
 }
 else
 {
-    Console.Write("Ошибка: введены не целочисленные данные.");
+    Console.Write("Ошибка: введены не целочисленные или не цифровые данные.");
 }
