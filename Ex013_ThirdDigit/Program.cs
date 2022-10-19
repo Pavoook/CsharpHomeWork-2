@@ -1,16 +1,16 @@
-﻿Console.WriteLine("Введите целое число (цифрами):"); //Ввод данных
+﻿Console.WriteLine("Введите целое число (цифрами):"); // Ввод данных
 string value = Console.ReadLine();
 
-bool check = int.TryParse(value, out int number); //Проверка, что введено целочисленное цифровое значение
+bool check = int.TryParse(value, out int number); // Проверка, что введено целочисленное цифровое значение
 if (check)
 {
-    number = int.Parse(value); //Парсинг в целочисленный формат
-    if (number > 99 || number < -99) //Проверка наличия в числе третьего разряда
+    number = int.Parse(value); // Парсинг в целочисленный формат
+    if (number > 99 || number < -99) // Проверка наличия в числе третьего разряда
     {
-        int decadeDigit = number / 100 % 10; //Вычисление значения третьего разряда
-
+        while (number > 999 || number < -999) number = number / 10; // Нахождение третьей цифры
+        number = number % 10;
         Console.Write("Третья цифра этого числа: "); //Вывод результата, с учетом отрицательных значений
-        Console.Write(Math.Abs(decadeDigit));
+        Console.Write(Math.Abs(number));
     }
     else
     {
